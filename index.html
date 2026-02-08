@@ -6,10 +6,53 @@
 		body{background-color: #f2edda;font-family:Garamond;}
 		footer{background-color:#a39c7e;padding:10px;}
 		.p1{height:300px; width:250px;}
-		div{padding:10px; display: inline-block;margin-bottom:10px;}		
+		div{padding:10px; display: inline-block;margin-bottom:10px;}
+		/* 1. Hover Effect */
+.art-piece {
+  transition: transform 0.3s ease; /* Smooth transition */
+  cursor: pointer;
+}
+
+.art-piece:hover {
+  transform: scale(1.1); /* Enlarges by 10% on hover */
+  z-index: 10;
+}
+
+/* 2. Click (Modal) Styles */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.9); /* Dark background */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 80%;
+  max-height: 80%;
+  margin-top: 5%;
+}
+
+.close {
+  position: absolute;
+  top: 20px; right: 35px;
+  color: white; font-size: 40px;
+  cursor: pointer;
+}
+		
 	</style>
 </head>
 <body>
+
+<script>
+function openModal(imageSrc) {
+  document.getElementById("artModal").style.display = "block";
+  document.getElementById("fullImage").src = imageSrc;
+}
+</script>
 
     <header>
 	<h1>Kat Creations</h1>
@@ -20,39 +63,43 @@
             </ul>
         </nav>
     </header>
+	<div id="artModal" class="modal" onclick="this.style.display='none'">
+  		<span class="close">&times;</span>
+  		<img class="modal-content" id="fullImage">
+	</div>
+
 
 	<div>
-		<img src="paint1.jpeg" class="p1">
+		<img src="paint1.jpeg" class="p1 art-piece" onclick="openModal(this.src)">
 	</div>
 	<div>
-		<img src="paint2.jpeg" class="p1">
+		<img src="paint2.jpeg" class="p1 art-piece" onclick="openModal(this.src)">
 	</div>
 	<div>
-		<img src="paint3.jpeg" class="p1">
+		<img src="paint3.jpeg" class="p1 art-piece" onclick="openModal(this.src)">
 	</div>
 	<div>
-		<img src="paint4.jpeg" class="p1">
+		<img src="paint4.jpeg" class="p1 art-piece" onclick="openModal(this.src)">
 	</div>
 	<div>
-		<img src="paint5.jpeg" class="p1">
+		<img src="paint5.jpeg" class="p1 art-piece" onclick="openModal(this.src)">
 	</div>
 	<div>
-		<img src="paint6.jpeg" class="p1">
+		<img src="paint6.jpeg" class="p1 art-piece" onclick="openModal(this.src)">
 	</div>
 	<div>
-		<img src="paint7.jpeg" class="p1">
+		<img src="paint7.jpeg" class="p1 art-piece" onclick="openModal(this.src)">
 	</div>
 	<div>
-		<img src="paint8.jpeg" class="p1">
+		<img src="paint8.jpeg" class="p1 art-piece" onclick="openModal(this.src)">
 	</div>
 	<div>
-		<img src="paint9.jpeg" class="p1">
+		<img src="paint9.jpeg" class="p1 art-piece" onclick="openModal(this.src)">
 	</div>
     <footer>
 	<p>All art pieces are created by Katherine Huang</p>
-	<p>If you are interested in buying a piece, contact kkhuang125@gmail.com</p>
+	<p>If you are interested in buying any piece, contact kkhuang125@gmail.com</p>
     </footer>
 
 </body>
-
 </html>
